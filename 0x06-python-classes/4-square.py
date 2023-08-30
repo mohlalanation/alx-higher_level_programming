@@ -1,36 +1,17 @@
 #!/usr/bin/python3
 
-
 class Square:
-    """Square class with validated private instance attribute size"""
-
     def __init__(self, size=0):
-        """Args:
-               size: size of square
-        """
-        self.size = size
 
-    @property
-    def size(self):
-        """size: size of square
+	Args:
+	self.size = size
 
-        setter validates size is an integer and >= 0
-
-        Raises:
-            TypeError: If size is not an int
-            ValueError: If size is < 0
-        """
-        return self.__size
-
-    @size.setter
-    def size(self, size):
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+    def size(self, value):
+	if not isinstance(value, int):
+	    raise TypeError("size must be an integer")
+	elif value < 0:
+	    raise ValueError("size must be >= 0")
+	self.__size = value
 
     def area(self):
-        """Returns the calculated the area of Square instance"""
-        return self.size ** 2
+	return (self.__size * self.__size)
