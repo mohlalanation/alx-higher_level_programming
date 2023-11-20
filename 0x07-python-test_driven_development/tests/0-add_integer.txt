@@ -120,4 +120,4 @@ Valid arguments
 	>>> type(result)
 	<class 'int'>
 
-End of tes
+End of test
